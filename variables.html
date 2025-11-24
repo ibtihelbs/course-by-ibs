@@ -1,0 +1,664 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Ibtihel Ben Salah - Web Developer & Designer crafting digital experiences that people actually want to use."
+        />
+        <title>Portfolio || Ibtihel Ben Salah</title>
+        <style>
+          /* ===== VARIABLES ===== */
+:root {
+  --color-primary: rgb(51, 51, 109);
+  --color-accent: rgb(104, 55, 73);
+  --color-text: #000;
+  --color-bg: white;
+
+  --border-radius: 20px;
+  --border-pill: 999px;
+
+  --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-family-serif: "Times New Roman", Times, serif;
+
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+  --space-4: 4rem;
+  --space-5: 5rem;
+  --space-6: 6rem;
+
+  --base-font-size: 12px;
+
+  --transition-ease: all 0.3s ease-in-out;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  margin: auto;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-family-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+button, .pill-button {
+  padding: 1em 2rem;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-serif);
+  text-transform: uppercase;
+  max-width: 900px;
+  letter-spacing: -4px;
+}
+
+h1 {
+  font-size: calc(var(--base-font-size) * 6.7);
+  font-weight: bolder;
+}
+
+h2 {
+  letter-spacing: -1px;
+  font-size: calc(var(--base-font-size) * 3.36);
+}
+
+p {
+  font-size: calc(var(--base-font-size) * 1.68);
+  max-width: 480px;
+}
+
+.text-sm {
+  font-size: var(--base-font-size);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.italic {
+  font-weight: bold;
+  font-style: oblique;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-family: var(--font-family-serif);
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cols-center-1 {
+  align-items: center;
+}
+
+.rows-center-1 {
+  justify-content: center;
+}
+
+.spacing-1 {
+  gap: var(--space-1);
+}
+
+.spacing-2 {
+  gap: var(--space-2);
+}
+
+.spacing-3 {
+  gap: var(--space-3);
+}
+
+.spacing-4 {
+  gap: var(--space-4);
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Section base */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+/* ===== COMPONENTS ===== */
+.border-bottom-1 {
+  border-bottom: 1px solid;
+}
+
+.service-item {
+  padding: var(--space-2);
+}
+
+.pill-button {
+  border: 1px var(--color-text) solid;
+  padding: 1em 2rem;
+  font-size: calc(var(--base-font-size) * 1.68);
+  font-weight: bold;
+  border-radius: var(--border-pill);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.tags-box span {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid black;
+  border-radius: var(--border-pill);
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#testimonials-section .grid-cols-3 > div {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-text);
+  padding: var(--space-1);
+}
+
+/* Hero overlay */
+#hero-section {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* so it doesn’t block clicks */
+}
+
+.overlay img {
+  position: absolute;
+}
+
+.overlay img:nth-child(1) {
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+}
+
+.overlay img:nth-child(2) {
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+}
+
+.overlay img:nth-child(3) {
+  top: 20%;
+  right: 15%;
+}
+
+.overlay img:nth-child(4) {
+  top: 20%;
+  left: 15%;
+}
+
+/* Optional: Add focus styles for accessibility */
+.pill-button:focus,
+a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+        </style>
+      </head>
+      <body>
+        <header>
+          <nav class="space-between">
+            <img
+              src="https://placehold.co/40x40"
+              alt="IBS Logo"
+              width="40"
+              height="40"
+            />
+            <ul class="flex-row spacing-1">
+              <li><a href="#about-section">About</a></li>
+              <li><a href="#services-section">Services</a></li>
+              <li><a href="#projects-section">Projects</a></li>
+              <li><a href="#testimonials-section">Testimonials</a></li>
+              <li><a href="#cta-section">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="hero-section" class="flex-col cols-center-1 spacing-3">
+          <div class="overlay" aria-hidden="true">
+            <img
+              src="https://placehold.co/80x100"
+              alt=""
+              width="80"
+              height="100"
+            />
+            <img
+              src="https://placehold.co/80x100"
+              alt=""
+              width="80"
+              height="100"
+            />
+            <img
+              src="https://placehold.co/80x100"
+              alt=""
+              width="80"
+              height="100"
+            />
+            <img
+              src="https://placehold.co/80x100"
+              alt=""
+              width="80"
+              height="100"
+            />
+          </div>
+          <h1 class="text-center">
+            I CRAFT DIGITAL EXPERIENCES THAT PEOPLE ACTUALLY WANT TO USE.
+          </h1>
+          <p class="text-center">
+            Web developer & designer turning complex problems into elegant,
+            user-centered solutions
+            <span class="italic">one pixel and line of code at a time.</span>
+          </p>
+          <div class="cta-box flex-row spacing-2">
+            <a href="#projects-section" class="pill-button">View My Work</a>
+            <a href="#cta-section" class="pill-button">Let's Talk</a>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="flex-col cols-center-1 spacing-3">
+          <h1 class="text-center">NICE TO MEET YOU—I'M IBTIHEL BEN SALAH</h1>
+          <div class="grid-cols-2 spacing-2">
+            <img
+              src="https://placehold.co/500x450"
+              alt="Ibtihel Ben Salah"
+              width="500"
+              height="450"
+            />
+            <div class="flex-col spacing-2">
+              <p>
+                I'm a developer and designer who believes great websites
+                shouldn't just look good
+                <span class="italic">
+                  they should feel intuitive, load fast, and solve real
+                  problems.</span
+                >
+              </p>
+              <p>
+                With 4+ years of experience, I specialize in building responsive
+                web applications that blend beautiful design with clean,
+                maintainable code.
+              </p>
+              <p>
+                Whether it's a sleek landing page, a complex web app, or a
+                complete brand refresh, I bring both technical expertise and
+                creative vision to every project.
+              </p>
+            </div>
+          </div>
+          <div class="tags-box">
+            <span>Frontend Development</span>
+            <span>UI/UX Design</span>
+            <span>Responsive Design</span>
+            <span>Performance Optimization</span>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services-section" class="flex-col cols-center-1 spacing-3">
+          <h1 class="text-center">WHAT I BRING TO THE TABLE</h1>
+          <div class="flex-col spacing-1">
+            <div class="flex-row spacing-2 border-bottom-1">
+              <img
+                src="https://placehold.co/100x100"
+                alt="Service icon"
+                width="100"
+                height="100"
+              />
+              <div class="service-item flex-col spacing-1">
+                <h2>Web Development</h2>
+                <p>
+                  From concept to deployment, I build fast, accessible websites
+                  and applications using modern frameworks and best practices.
+                  Clean code is my default.
+                </p>
+              </div>
+            </div>
+            <div class="flex-row spacing-2 border-bottom-1">
+              <img
+                src="https://placehold.co/100x100"
+                alt="Service icon"
+                width="100"
+                height="100"
+              />
+              <div class="service-item flex-col spacing-1">
+                <h2>UI/UX Design</h2>
+                <p>
+                  I design interfaces that users love
+                  <span class="italic"
+                    >balancing aesthetics with usability, backed by research and
+                    tested with real people.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="flex-row spacing-2">
+              <img
+                src="https://placehold.co/100x100"
+                alt="Service icon"
+                width="100"
+                height="100"
+              />
+              <div class="service-item flex-col spacing-1">
+                <h2>Brand & Visual Identity</h2>
+                <p>
+                  Your brand is more than a logo. I create cohesive visual
+                  systems that tell your story and resonate with your audience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects-section" class="flex-col cols-center-1 spacing-3">
+          <h1 class="text-center">SELECTED PROJECTS</h1>
+          <div class="grid-cols-3 spacing-1">
+            <!-- Featured Project -->
+            <div class="flex-col spacing-1">
+              <img
+                src="https://placehold.co/600x400"
+                alt="Bloom & Co. Project"
+                width="600"
+                height="400"
+              />
+              <h2>BLOOM & CO.</h2>
+              <p>
+                A complete brand refresh and e-commerce platform for a
+                sustainable skincare startup
+                <span class="italic">
+                  delivering a 240% increase in online conversions within 3
+                  months.
+                </span>
+              </p>
+              <div class="space-between">
+                <div class="tags-box">
+                  <span>UI/UX Design</span>
+                  <span>Development</span>
+                  <span>E-commerce</span>
+                </div>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Bloom & Co. project"
+                >
+                  <img
+                    src="https://placehold.co/40x40"
+                    alt="External link"
+                    width="40"
+                    height="40"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- Other projects as individual cards (not list items) -->
+           <div class="flex-col" style="grid-column: span 2;">
+             <div
+              class="flex-row spacing-1 border-bottom-1 space-between"
+             
+            >
+              <h2>TASKFLOW</h2>
+              <div class="tags-box">
+                <span>Web App</span>
+                <span>Frontend Development</span>
+                <span>UX Design</span>
+              </div>
+            </div>
+            <div
+              class="flex-row spacing-1 border-bottom-1 space-between"
+             
+            >
+              <h2>APEX FITNESS</h2>
+              <div class="tags-box">
+                <span>Responsive Design</span>
+                <span>Development</span>
+                <span>UX Research</span>
+              </div>
+            </div>
+            <div
+              class="flex-row spacing-1 border-bottom-1 space-between"
+             
+            >
+              <h2>ARTISAN MARKETPLACE</h2>
+              <div class="tags-box">
+                <span>Full-Stack Development</span>
+                <span>Design System</span>
+              </div>
+            </div>
+            <div
+              class="flex-row spacing-1 border-bottom-1 space-between"
+             
+            >
+              <h2>VERDE CAFE</h2>
+              <div class="tags-box">
+                <span>Branding</span>
+                <span>UI Design</span>
+                <span>Development</span>
+              </div>
+            </div>
+           </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section
+          id="testimonials-section"
+          class="flex-col cols-center-1 spacing-3"
+        >
+          <h1 class="text-center">WHAT CLIENTS SAY</h1>
+          <div class="grid-cols-3 spacing-3">
+            <!-- Testimonial 1 -->
+            <div class="flex-col spacing-2">
+              <div class="flex-col spacing-1">
+                <p>
+                  "Working with Ibtihel was a game-changer for our business. She
+                  took our vision and turned it into a website that not only
+                  looks stunning but actually converts. Her attention to detail
+                  is unmatched."
+                </p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+              </div>
+              <div class="flex-row spacing-1">
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="Sarah Mitchell"
+                  width="40"
+                  height="40"
+                />
+                <div>
+                  <h4 class="username">Sarah Mitchell</h4>
+                  <p class="text-sm">Founder at Bloom & Co.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="flex-col spacing-2">
+              <div class="flex-col spacing-1">
+                <p>
+                  "Ibtihel has an incredible ability to understand what users
+                  need before they even know it themselves. Our app's user
+                  satisfaction scores jumped 60% after her redesign."
+                </p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+              </div>
+              <div class="flex-row spacing-1">
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="Marcus Chen"
+                  width="40"
+                  height="40"
+                />
+                <div>
+                  <h4 class="username">Marcus Chen</h4>
+                  <p class="text-sm">CTO at TaskFlow</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="flex-col spacing-2">
+              <div class="flex-col spacing-1">
+                <p>
+                  "Professional, creative, and always on time. Ibtihel delivered
+                  a website that perfectly captures our brand while being
+                  incredibly easy to manage."
+                </p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+              </div>
+              <div class="flex-row spacing-1">
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="David Rodriguez"
+                  width="40"
+                  height="40"
+                />
+                <div>
+                  <h4 class="username">David Rodriguez</h4>
+                  <p class="text-sm">Marketing Director at Apex Fitness</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta-section" class="flex-col cols-center-1 spacing-3">
+          <h1 class="text-center">LET'S BUILD SOMETHING GREAT TOGETHER</h1>
+          <p class="text-center">
+            Have a project in mind? Whether you need a complete website, a
+            design refresh, or just want to chat about an ideas
+            <span class="italic">I'd love to hear from you.</span>
+          </p>
+          <a class="pill-button" href="mailto:ibtihel.bensalah@outlook.fr"
+            >Get In Touch</a
+          >
+        </section>
+
+        <!-- Footer -->
+        <footer class="flex-col cols-center-1 spacing-1">
+          <h2 class="text-center">FIND ME ON SOCIAL MEDIA</h2>
+          <ul class="flex-row spacing-1">
+            <li>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="LinkedIn"
+                  width="40"
+                  height="40"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="GitHub"
+                  width="40"
+                  height="40"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Behance"
+              >
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="Behance"
+                  width="40"
+                  height="40"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Dribbble"
+              >
+                <img
+                  src="https://placehold.co/40x40"
+                  alt="Dribbble"
+                  width="40"
+                  height="40"
+                />
+              </a>
+            </li>
+          </ul>
+          <p class="text-sm">
+            © 2025 Ibtihel Ben Salah • Crafted with care (and too much coffee)
+          </p>
+        </footer>
+      </body>
+    </html>
+  </body>
+</html>

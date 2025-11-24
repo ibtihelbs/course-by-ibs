@@ -1,0 +1,95 @@
+body {
+  margin: auto;
+  padding: var(--space-3) var(--space-6);
+}
+section {
+  min-height: 100vh;
+  justify-content: center;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  padding: 1em 2rem;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+#about-section p::before {
+  content: url(https://placehold.co/20x20);
+}
+.border-bottom-1 {
+  border-bottom: 1px solid;
+}
+.service-item {
+  padding: var(--space-2);
+}
+
+.pill-button {
+  border: 1px var(--color-text) solid;
+  padding: 1em 2rem;
+  font-size: calc(var(--base-font-size) * 1.68);
+  font-weight: bold;
+  border-radius: var(--border-pill);
+}
+nav a {
+  font-size: calc(var(--base-font-size) * 1.68);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#projects-section ul {
+  grid-column: span 2;
+}
+#projects-section ul li {
+  padding: var(--space-2);
+}
+
+.tags-box span {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid black;
+  border-radius: var(--border-pill);
+}
+#testimonals-section .grid-cols-3 > div {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-text);
+  padding: var(--space-1);
+}
+#hero-section {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.overlay img:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+}
+.overlay img:nth-child(2) {
+  position: absolute;
+
+  top: 50%;
+  right: 20%;
+}
+.overlay img:nth-child(3) {
+  position: absolute;
+
+  top: 20%;
+  right: 15%;
+}
+.overlay img:nth-child(4) {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}

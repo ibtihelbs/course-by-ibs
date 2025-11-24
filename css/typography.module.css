@@ -1,0 +1,37 @@
+body {
+  font-family: var(--font-family-sans);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-serif);
+  text-transform: uppercase;
+  max-width: 900px;
+  letter-spacing: -4px;
+}
+h1 {
+  font-size: calc(var(--base-font-size) * 6.7);
+  font-weight: bolder;
+}
+h2 {
+  letter-spacing: -1px;
+  font-size: calc(var(--base-font-size) * 3.36);
+}
+p {
+  font-size: calc(var(--base-font-size) * 1.68);
+  max-width: 480px;
+}
+
+.text-sm {
+  font-size: var(--base-font-size);
+}
+.text-center {
+  text-align: center;
+}
+.italic {
+  font-weight: bold;
+  font-style: oblique;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-family: var(--font-family-serif);
+}
