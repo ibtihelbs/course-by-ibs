@@ -7,8 +7,10 @@
       name="description"
       content="Ibtihel Ben Salah - Web Developer & Designer crafting digital experiences that people actually want to use."
     />
-    <link rel="stylesheet" href="style.css" />
     <title>Portfolio || Ibtihel Ben Salah</title>
+    <style>
+      /* Mobile Responsive */
+    </style>
   </head>
   <body>
     <header>
@@ -211,68 +213,63 @@
     <!-- Testimonials Section -->
     <section id="testimonials-section">
       <h1 class="text-center">WHAT CLIENTS SAY</h1>
-      <div class="slider-container">
-        <div class="mobile-slider">
-          <div class="grid-cols-3">
-            <div class="testimonial-card flex-col">
-              <p>
-                "Working with Ibtihel was a game-changer for our business. She
-                took our vision and turned it into a website that not only looks
-                stunning but actually converts. Her attention to detail is
-                unmatched."
-              </p>
-              <div class="rating">★★★★★</div>
-              <div class="flex-row">
-                <img
-                  src="https://placehold.co/40x40/"
-                  alt="Sarah Mitchell"
-                  style="border-radius: 50%"
-                />
-                <div>
-                  <h4 class="username">Sarah Mitchell</h4>
-                  <p class="text-sm">Founder at Bloom & Co.</p>
-                </div>
-              </div>
+      <div class="grid-cols-3">
+        <div class="testimonial-card flex-col">
+          <p>
+            "Working with Ibtihel was a game-changer for our business. She took
+            our vision and turned it into a website that not only looks stunning
+            but actually converts. Her attention to detail is unmatched."
+          </p>
+          <div class="rating">★★★★★</div>
+          <div class="flex-row">
+            <img
+              src="https://placehold.co/40x40/"
+              alt="Sarah Mitchell"
+              style="border-radius: 50%"
+            />
+            <div>
+              <h4 class="username">Sarah Mitchell</h4>
+              <p class="text-sm">Founder at Bloom & Co.</p>
             </div>
+          </div>
+        </div>
 
-            <div class="testimonial-card flex-col">
-              <p>
-                "Ibtihel has an incredible ability to understand what users need
-                before they even know it themselves. Our app's user satisfaction
-                scores jumped 60% after her redesign."
-              </p>
-              <div class="rating">★★★★★</div>
-              <div class="flex-row">
-                <img
-                  src="https://placehold.co/40x40/"
-                  alt="Marcus Chen"
-                  style="border-radius: 50%"
-                />
-                <div>
-                  <h4 class="username">Marcus Chen</h4>
-                  <p class="text-sm">CTO at TaskFlow</p>
-                </div>
-              </div>
+        <div class="testimonial-card flex-col">
+          <p>
+            "Ibtihel has an incredible ability to understand what users need
+            before they even know it themselves. Our app's user satisfaction
+            scores jumped 60% after her redesign."
+          </p>
+          <div class="rating">★★★★★</div>
+          <div class="flex-row">
+            <img
+              src="https://placehold.co/40x40/"
+              alt="Marcus Chen"
+              style="border-radius: 50%"
+            />
+            <div>
+              <h4 class="username">Marcus Chen</h4>
+              <p class="text-sm">CTO at TaskFlow</p>
             </div>
+          </div>
+        </div>
 
-            <div class="testimonial-card flex-col">
-              <p>
-                "Professional, creative, and always on time. Ibtihel delivered a
-                website that perfectly captures our brand while being incredibly
-                easy to manage."
-              </p>
-              <div class="rating">★★★★★</div>
-              <div class="flex-row">
-                <img
-                  src="https://placehold.co/40x40/"
-                  alt="David Rodriguez"
-                  style="border-radius: 50%"
-                />
-                <div>
-                  <h4 class="username">David Rodriguez</h4>
-                  <p class="text-sm">Marketing Director at Apex Fitness</p>
-                </div>
-              </div>
+        <div class="testimonial-card flex-col">
+          <p>
+            "Professional, creative, and always on time. Ibtihel delivered a
+            website that perfectly captures our brand while being incredibly
+            easy to manage."
+          </p>
+          <div class="rating">★★★★★</div>
+          <div class="flex-row">
+            <img
+              src="https://placehold.co/40x40/"
+              alt="David Rodriguez"
+              style="border-radius: 50%"
+            />
+            <div>
+              <h4 class="username">David Rodriguez</h4>
+              <p class="text-sm">Marketing Director at Apex Fitness</p>
             </div>
           </div>
         </div>
@@ -341,6 +338,30 @@
         © 2025 Ibtihel Ben Salah • Crafted with care (and too much coffee)
       </p>
     </footer>
-    <script src="./js/script.js"></script>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("nav-menu");
+        menu.classList.toggle("active");
+      }
+
+      // Close menu when clicking on a link
+      document.querySelectorAll("#nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("nav-menu").classList.remove("active");
+        });
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

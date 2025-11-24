@@ -1,23 +1,99 @@
-@media (max-width: 800px) {
-  .grid-cols-2 {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  body {
+    padding: var(--space-2) var(--space-3);
   }
-  #about-section img {
+
+  header {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: var(--space-2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     display: none;
   }
 
-  #projects-section .grid-cols-3 {
+  nav ul.active {
+    display: flex;
+  }
+  section {
+    min-height: auto;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3 {
     grid-template-columns: 1fr;
   }
+
+  #about-section .grid-cols-2 img {
+    height: 300px;
+  }
+
   #projects-section ul {
     display: none;
   }
+
   .mobile-titles {
-    overflow: auto;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+  }
+
+  .mobile-titles::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .mobile-titles::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 2px;
+  }
+
+  .cta-box {
+    width: 100%;
+  }
+
+  .pill-button {
+    width: 100%;
+    text-align: center;
   }
 }
-@media (max-width: 500px) {
-  .slider-mobile {
-    background-color: red;
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+  .slider-container {
+    width: 100vw;
+    overflow: hidden;
+  }
+  .mobile-slider {
+    max-width: 300vw;
+    /* overflow: hidden; */
+    padding: var(--space-2) var(--space-3);
+    transform: translateX(calc(-200vw + var(--space-3)));
+  }
+  .mobile-slider .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    width: 300vw;
+  }
+  .testimonial-card {
+    width: 88vw;
   }
 }
