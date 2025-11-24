@@ -1,0 +1,23 @@
+@media (max-width: 800px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  #about-section img {
+    display: none;
+  }
+
+  #projects-section .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  #projects-section ul {
+    display: none;
+  }
+  .mobile-titles {
+    overflow: auto;
+  }
+}
+@media (max-width: 500px) {
+  .slider-mobile {
+    background-color: red;
+  }
+}
