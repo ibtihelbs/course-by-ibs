@@ -8,7 +8,7 @@ h3 {
 
 h1 {
   font-size: clamp(32px, 8vw, 100px);
-  font-weight: bolder;
+  font-weight: black;
   letter-spacing: -0.05em;
   line-height: 0.95;
 }

@@ -38,7 +38,7 @@ header {
   right: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  padding: var(--space-2) var(--space-6);
+  padding: var(--space-1);
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -47,17 +47,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
   margin: 0 auto;
 }
 
 nav ul {
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 nav a {
-  font-size: 18px;
+  font-size: var(--base-font-size);
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
@@ -118,20 +117,18 @@ nav a:hover {
   justify-content: center;
 }
 
-/* Layout Utilities */
-
 /* Tags */
 .tags-box {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1);
+  gap: calc(var(--space-1) / 2);
 }
 
 .tags-box span {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border: 1px solid var(--color-text);
   border-radius: var(--border-pill);
-  font-size: 14px;
+  font-size: var(--base-font-size);
   transition: var(--transition-ease);
 }
 
