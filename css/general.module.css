@@ -6,6 +6,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+
+  color: var(--color-text);
 }
 
 section {
@@ -85,7 +87,7 @@ nav a:hover {
   display: none;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: calc(var(--base-font-size) * 1.618 * 1.5);
   cursor: pointer;
   padding: 0.5rem;
 }
@@ -93,8 +95,8 @@ nav a:hover {
 /* Buttons */
 .pill-button {
   border: 2px solid var(--color-text);
-  padding: 1em 2.5rem;
-  font-size: 18px;
+  padding: 1rem 2rem;
+  font-size: var(--base-font-size);
   font-weight: bold;
   border-radius: var(--border-pill);
   display: inline-block;
@@ -112,8 +114,8 @@ nav a:hover {
 
 .cta-box {
   display: flex;
-  gap: var(--space-2);
-  flex-wrap: wrap;
+  gap: var(--space-1);
+
   justify-content: center;
 }
 
@@ -236,7 +238,7 @@ nav a:hover {
 
 .rating {
   color: var(--color-accent);
-  font-size: 20px;
+  font-size: calc(var(--base-font-size) * 1.618);
 }
 
 .username {

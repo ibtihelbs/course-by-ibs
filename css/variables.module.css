@@ -1,7 +1,7 @@
 :root {
   --color-primary: rgb(60, 60, 88);
-  --color-accent: rgb(244, 38, 113);
-  --color-text: #000;
+  --color-accent: rgb(244, 230, 38);
+  --color-text: #000000;
   --color-bg: white;
   --border-radius: 20px;
   --border-pill: 999px;

@@ -4,7 +4,7 @@
   }
 
   header {
-    padding: var(--space-2) var(--space-3);
+    /* padding: var(--space-2) var(--space-3); */
   }
 
   nav ul {
@@ -62,8 +62,7 @@
   }
 
   .pill-button {
-    width: 100%;
-    text-align: center;
+    padding: 0.5rem 1rem;
   }
 }
 
